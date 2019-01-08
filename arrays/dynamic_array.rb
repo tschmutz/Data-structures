@@ -5,6 +5,9 @@ class DynamicArray
   attr_reader :length
 
   def initialize
+    @store = static_array.new(8)
+    @capacity = 8
+    @length = 0
   end
 
   # O(1)
