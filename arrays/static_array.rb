@@ -1,5 +1,6 @@
 class StaticArray
     def initialize(length)
+        @length = length
     end
   
     # O(1)
