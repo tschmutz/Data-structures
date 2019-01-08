@@ -24,6 +24,11 @@ class DynamicArray
 
   # O(1)
   def pop
+    raise 'No elements' unless length > 1
+    value = self[length - 1]
+    self[lengnth - 1] = nil 
+    length -= 1
+    value
   end
 
   # O(1) ammortized; O(n) worst case. Variable because of the possible
