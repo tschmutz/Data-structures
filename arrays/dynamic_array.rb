@@ -5,7 +5,7 @@ class DynamicArray
   attr_reader :length
 
   def initialize
-    @store = static_array.new(8)
+    @store = StaticArray.new(8)
     @capacity = 8
     @length = 0
   end
@@ -34,6 +34,7 @@ class DynamicArray
   # O(1) ammortized; O(n) worst case. Variable because of the possible
   # resize.
   def push(val)
+
   end
 
   # O(n): has to shift over all the elements.
@@ -54,5 +55,10 @@ class DynamicArray
 
   # O(n): has to copy over all the elements to the new store.
   def resize!
+    new_capacity = capacity * 2
+    new_store = StaticArray.new(new_capacity)
+    store.each_with_index{|el, idx| new_store[idx] = el}
+    self.store = new_store
+    self.capacity = new_capacity
   end
 end
