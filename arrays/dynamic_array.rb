@@ -34,7 +34,10 @@ class DynamicArray
   # O(1) ammortized; O(n) worst case. Variable because of the possible
   # resize.
   def push(val)
+    resize! if length == capacity
 
+    self.length += 1
+    self[length - 1] = val
   end
 
   # O(n): has to shift over all the elements.
