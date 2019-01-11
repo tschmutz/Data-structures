@@ -42,6 +42,10 @@ class DynamicArray
 
   # O(n): has to shift over all the elements.
   def shift
+    raise "Empty array" if self.length == 0
+    val = store[0]
+    (0...length).each{ |el| store[el - 1] = store[el]}
+    val 
   end
 
   # O(n): has to shift over all the elements.
