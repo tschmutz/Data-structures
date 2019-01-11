@@ -42,14 +42,24 @@ class DynamicArray
 
   # O(n): has to shift over all the elements.
   def shift
-    raise "Empty array" if self.length == 0
-    val = store[0]
-    (0...length).each{ |el| store[el - 1] = store[el]}
-    val 
+    raise "index out of bounds" if (length == 0)
+
+    val = self[0]
+    (1...length).each { |i| self[i - 1] = self[i] }
+    self.length -= 1
+
+    val
   end
 
   # O(n): has to shift over all the elements.
   def unshift(val)
+    resize! if length == capacity
+
+    self.length += 1
+    (length - 2).downto(0).each { |i| self[i + 1] = self[i] }
+    self[0] = val
+
+    nil
   end
 
   protected
