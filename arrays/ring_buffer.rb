@@ -55,7 +55,9 @@ class RingBuffer
   attr_writer :length
 
   def check_index(index)
-
+    unless (index >= 0) && (index < length)
+        raise "index out of bounds"
+      end
   end
 
   def resize!
