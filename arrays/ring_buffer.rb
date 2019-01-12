@@ -59,6 +59,12 @@ class RingBuffer
   end
 
   def resize!
+    new_capacity = capacity * 2
+    new_store = StaticArray.new(new_capacity)
+    length.times { |i| new_store[i] = self[i] }
 
+    self.capacity = new_capacity
+    self.store = new_store
+    self.start_idx = 0
   end
 end
