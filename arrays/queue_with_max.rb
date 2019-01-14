@@ -4,7 +4,8 @@ class QueueWithMax
   attr_reader :store, :maxque
 
   def initialize
-
+    @store = RingBuffer.new
+    @maxque = RingBuffer.new
   end
 
   def enqueue(el)
