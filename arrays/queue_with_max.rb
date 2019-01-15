@@ -14,7 +14,9 @@ class QueueWithMax
   end
 
   def dequeue
-
+    val = @store.shift
+    @maxque.shift if val == maxque[0]
+    val
   end
 
   def max
