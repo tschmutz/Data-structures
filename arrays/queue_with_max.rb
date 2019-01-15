@@ -9,7 +9,8 @@ class QueueWithMax
   end
 
   def enqueue(el)
-
+    @store.push(el)
+    update_maxque(el)
   end
 
   def dequeue
