@@ -20,7 +20,7 @@ class QueueWithMax
   end
 
   def max
-
+    @maxque[0] if @maxque.length > 0
   end
 
   def update_maxque(el)
