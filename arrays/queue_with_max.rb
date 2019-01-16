@@ -24,7 +24,8 @@ class QueueWithMax
   end
 
   def update_maxque(el)
-
+    @maxque.pop while @maxque[0] && @maxque[@maxque.length - 1] < el
+    @maxque.push(el)
   end
 
   def length
