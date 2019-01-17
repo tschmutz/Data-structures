@@ -42,7 +42,13 @@ class RingBuffer
 
   # O(1)
   def shift
+    raise "index out of bounds" if (length == 0)
 
+    val, self[0] = self[0], nil
+    self.start_idx = (start_idx + 1) % capacity
+    self.length -= 1
+
+    val
   end
 
   # O(1) ammortized
