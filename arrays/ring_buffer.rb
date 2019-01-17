@@ -53,7 +53,11 @@ class RingBuffer
 
   # O(1) ammortized
   def unshift(val)
+    resize! if (length == capacity)
 
+    self.start_idx = (start_idx - 1) % capacity
+    self.length += 1
+    self[0] = val
   end
 
   protected
