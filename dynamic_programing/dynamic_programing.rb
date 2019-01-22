@@ -30,7 +30,7 @@ class DynamicProgramming
             new_com = []
             (1..3).each do |i|
                 jump_cache[idx - i].each do |step|
-                    new_step = step.dup << i 
+                    new_step = step + [i] 
                     new_com << new_step
                 end   
             end 
@@ -38,5 +38,26 @@ class DynamicProgramming
             idx += 1
         end 
         jump_cache 
+    end 
+
+    def super_frog_hops(num_stairs, max_stairs)
+        cache = [[[]], [[1]]]
+        return cache[num_stairs] if num_stairs < 2
+        
+        (2..num_stairs).each do |stairs|
+            new_comb = []
+            (1..max_stairs).each do |jump|
+                if stairs - jump < 0
+                    next
+                else
+                    cache[stairs - jump].each do |subarr|
+                        next_com = subarr + [jump] 
+                        new_comb << next_com
+                    end 
+                end 
+            end 
+            cache[stairs] = new_comb
+        end 
+        cache[num_stairs]
     end 
 end 
