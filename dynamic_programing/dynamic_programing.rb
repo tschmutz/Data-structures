@@ -40,6 +40,9 @@ class DynamicProgramming
         jump_cache 
     end 
 
+    # frog hops function that takes the number of stairs the frog can jump as well as 
+    # number of stairs in staircase as arguments
+
     def super_frog_hops(num_stairs, max_stairs)
         cache = [[[]], [[1]]]
         return cache[num_stairs] if num_stairs < 2
