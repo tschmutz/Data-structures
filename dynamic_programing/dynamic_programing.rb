@@ -63,4 +63,8 @@ class DynamicProgramming
         end 
         cache[num_stairs]
     end 
+
+    def knapsack(values, weights)
+
+    end 
 end 
