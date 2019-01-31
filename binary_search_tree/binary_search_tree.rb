@@ -5,4 +5,8 @@ class BinarySearchTree
         @root = nil
     end 
 
+    def insert(val)
+        @root = insert_into_tree(@root, val)
+    end 
+
 end
