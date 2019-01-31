@@ -1,4 +1,8 @@
-def binary_search_tree
+class BinarySearchTree
+    attr_reader :root
 
+    def initialize
+        @root = nil
+    end 
 
 end
