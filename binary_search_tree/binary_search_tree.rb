@@ -9,4 +9,8 @@ class BinarySearchTree
         @root = insert_into_tree(@root, val)
     end 
 
+    def  insert_into_tree
+
+    end
+
 end
