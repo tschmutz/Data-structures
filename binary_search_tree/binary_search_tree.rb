@@ -10,7 +10,15 @@ class BinarySearchTree
     end 
 
     def  insert_into_tree
+        return BSTNode.new(value) if tree_node.nil?
 
+        if value <= tree_node.value
+          tree_node.left = insert_into_tree(tree_node.left, value)
+        elsif value > tree_node.value
+          tree_node.right = insert_into_tree(tree_node.right, value)
+        end
+    
+        tree_node
     end
 
     def find(value, tree_node = @root)
