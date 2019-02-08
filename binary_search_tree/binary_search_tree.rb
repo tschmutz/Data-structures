@@ -32,4 +32,18 @@ class BinarySearchTree
         end
       end
 
+      def delete_from_tree(tree_node, value)
+        # if correct node is found, then call remove on it.
+        # otherwise, recurse until you find it
+        if value == tree_node.value
+          tree_node = remove(tree_node)
+        elsif value <= tree_node.value
+          tree_node.left = delete_from_tree(tree_node.left, value)
+        elsif value > tree_node.value
+          tree_node.right = delete_from_tree(tree_node.right, value)
+        end
+    
+        tree_node
+      end
+
 end
