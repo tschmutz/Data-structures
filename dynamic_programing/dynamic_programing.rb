@@ -67,4 +67,9 @@ class DynamicProgramming
     def knapsack(values, weights)
 
     end 
+
+
+    def knapsack_table
+
+    end
 end 
