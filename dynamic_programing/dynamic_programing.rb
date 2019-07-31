@@ -73,6 +73,9 @@ class DynamicProgramming
 
 
     def knapsack_table
+        solution_table = []
 
+
+        solution_table
     end
 end 
