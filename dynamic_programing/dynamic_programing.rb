@@ -64,8 +64,8 @@ class DynamicProgramming
         cache[num_stairs]
     end 
 
-    def knapsack(values, weights)
-
+    def knapsack(values, weights, capacity)
+        return 0 if capacity.zero? || weights.length.zero?
     end 
 
 
