@@ -66,6 +66,9 @@ class DynamicProgramming
 
     def knapsack(values, weights, capacity)
         return 0 if capacity.zero? || weights.length.zero?
+
+        solution_table = knapsack_table(values, weights, capacity)
+        solution_table[capacity][-1]
     end 
 
 
