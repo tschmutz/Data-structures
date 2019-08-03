@@ -92,6 +92,6 @@ class DynamicProgramming
             end
         end 
 
-        solution_tabl
+        solution_table
     end
 end 
