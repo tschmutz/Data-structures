@@ -1,3 +1,5 @@
+require_relative 'bst_node.rb'
+
 class BinarySearchTree
     attr_reader :root
 
