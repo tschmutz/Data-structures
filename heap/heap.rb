@@ -1,6 +1,8 @@
 class BinaryMinHeap
 
-    def initialize
+    def initialize(&prc)
+        @prc = prc
+        @store = []
 
     end
 end
