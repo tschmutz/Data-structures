@@ -8,4 +8,8 @@ class BinaryMinHeap
     def count
         @store.length
     end
+
+    def peek
+        @store[0]
+    end
 end
