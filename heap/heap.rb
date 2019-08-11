@@ -1,4 +1,5 @@
 class BinaryMinHeap
+    attr_reader :store, :prc
 
     def initialize(&prc)
         @prc = prc
