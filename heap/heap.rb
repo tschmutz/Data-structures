@@ -25,7 +25,7 @@ class BinaryMinHeap
       end
 
       def self.hepify_down(array, parent_index, len = array.length, &prc)
-
+        prc ||=  proc { |x, y| x <=> y}
       end
 
       def self.parent_index(child_index)
