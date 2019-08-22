@@ -26,6 +26,9 @@ class BinaryMinHeap
 
       def self.hepify_down(array, parent_index, len = array.length, &prc)
         prc ||=  proc { |x, y| x <=> y}
+        children = child_indices(len, parent_idx)
+        if children.all? { |child_idx| prc.call(array[parent_idx],  array[child_idx]) < 0}
+          return array
       end
 
       def self.parent_index(child_index)
