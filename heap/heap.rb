@@ -30,6 +30,14 @@ class BinaryMinHeap
         if children.all? { |child_idx| prc.call(array[parent_idx],  array[child_idx]) < 0}
           return array
         end
+        if children.length == 1
+            swap_idx = children[0]
+          else
+            swap_idx = prc.call(array[children[0]], array[children[1]]) == -1 ? children[0] : children[1]
+          end
+          array[parent_idx], array[swap_idx] = array[swap_idx], array[parent_idx]
+          heapify_down(array, swap_idx, len, &prc)
+        end
       end
 
       def self.parent_index(child_index)
