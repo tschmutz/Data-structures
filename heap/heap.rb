@@ -42,6 +42,6 @@ class BinaryMinHeap
 
       def self.parent_index(child_index)
         raise 'root has no parent' if child_index.zero?
-        (child_index - 1) / 2
+  
       end
 end
